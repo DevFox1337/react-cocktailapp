@@ -1,0 +1,22 @@
+[
+  {
+    "to": "/",
+    "text": "random drinks",
+    "icon": "shuffle"
+  },
+  {
+    "to": "/favorites",
+    "text": "favorites",
+    "icon": "favorite"
+  },
+  {
+    "to": "/about",
+    "text": "about",
+    "icon": "info"
+  },
+  {
+    "to": "/settings",
+    "text": "settings",
+    "icon": "settings"
+  }
+]
