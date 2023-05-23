@@ -1,16 +1,4 @@
-/* media queries */
-
-@mixin mobile-small {
-  @media (max-width: 350px) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: 767px) {
-    @content;
-  }
-}
+/* BREAKPOINTS */
 
 @mixin tablet {
   @media (min-width: 768px) {
@@ -18,20 +6,145 @@
   }
 }
 
-@mixin tablet-landscape {
+@mixin tablet-ls {
   @media (min-width: 1024px) {
     @content;
   }
 }
 
-@mixin laptop {
-  @media (min-width: 1200px) {
+@mixin desktop {
+  @media (min-width: 1180px) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: 1500px) {
-    @content;
+/* BUTTONS */
+
+@mixin button {
+  outline: none;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: $button-shadow;
+}
+
+@mixin primary-button {
+  @include button;
+  background-color: $clr-primary;
+  border-radius: 20px;
+  color: $clr-white;
+  width: 100%;
+  max-width: 235px;
+
+  &:hover {
+    background-color: $clr-primary-dark;
   }
+}
+
+/* TEXT SHORTENING */
+
+@mixin text-shorten($numLines: 1) {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+ 
+  @supports (-webkit-line-clamp: $numLines) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/* FLEXBOX TOOLKIT */
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column-center {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-evenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@mixin flex-column-end {
+  @include flex-col;
+  justify-content: flex-end;
+}
+
+@mixin flex-column-start {
+  @include flex-col;
+  justify-content: flex-start;
+}
+
+/* Z-INDEX */
+
+$z-indexes: (
+  "header",
+  "overlay",
+  "modal"
+);
+ 
+@function z-index($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name))+1;
+  }
+  @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+/* POSITION */
+
+@mixin position($position: absolute, $top: null, $right: null, $bottom: null, $left: null, $z-index: initial) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
 }

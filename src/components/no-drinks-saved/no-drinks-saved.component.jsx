@@ -9,7 +9,7 @@ const NoDrinksSaved = () => {
       <h1 className='no-saved-drinks__header'>Nothing to see here... yet</h1>
       <p className='no-saved-drinks__text'>Go check some random drinks and save your favorites!</p>
       <Link className='no-saved-drinks__link' to='/'>
-       Check Random Drinks!
+        Check Random Drinks!
       </Link>
     </div>
   )

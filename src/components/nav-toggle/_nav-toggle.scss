@@ -8,7 +8,6 @@
   background: transparent;
   transition: all 0.2s ease-out;
   cursor: pointer;
-  z-index: 2;
 
   &__is-open {
     background-color: $clr-primary-dark;
@@ -19,7 +18,7 @@
     }
   }
 
-  @include tablet {
+  @include tablet-ls {
     display: none;
   }
 

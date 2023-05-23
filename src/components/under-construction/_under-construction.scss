@@ -4,12 +4,8 @@
   text-align: center;
 
   &__image {
-    width: 250px;
+    width: 220px;
     margin-bottom: 10px;
-
-    @include tablet {
-      width: 300px;
-    }
   }
 
   &__header {

@@ -25,7 +25,7 @@ const RandomDrinksPage = () => {
 
     let uniqueDrinks = []
     try {
-      while (uniqueDrinks.length < 5) {
+      while (uniqueDrinks.length < 6) {
         const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
         const data = await response.json()
         const newDrink = data.drinks[0]
@@ -47,7 +47,6 @@ const RandomDrinksPage = () => {
   return (
     <main>
       <div className='random-drinks'>
-        <h1 className='random-drinks__header'>random drinks</h1>
         {isLoading && <LoadingIndicator />}
         {isError ? <FetchError /> : isLoading ? null : <DrinkGrid drinks={drinks} />}
         {!isLoading && !isError && (

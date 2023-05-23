@@ -8,9 +8,8 @@
   background: transparent;
   transition: all 0.2s ease-out;
   cursor: pointer;
-  z-index: 2;
 
-  @include tablet {
+  @include tablet-ls {
     position: absolute;
     right: 0;
   }

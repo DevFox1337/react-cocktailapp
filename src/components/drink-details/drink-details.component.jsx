@@ -53,7 +53,10 @@ const DrinkDetails = ({ drink, isSaved, handleSaveDrink, handleDeleteDrink }) =>
       <h2 className='drink-details__title'>{drink.strDrink}</h2>
       <div className='drink-details__image-container'>
       {message && <SaveModal message={message} />}
-        <img className='drink-details__image' src={drink.strDrinkThumb} alt='Drink image' />
+        <img
+          className={`drink-details__image ${isSaved ? 'saved' : ''}`}
+          src={drink.strDrinkThumb}
+          alt='Drink image' />
         {isSaved && (
           <span className='drink-details__saved-tag'>
             <span className='material-symbols-rounded drink-details__save-icon'>favorite</span>
@@ -63,8 +66,7 @@ const DrinkDetails = ({ drink, isSaved, handleSaveDrink, handleDeleteDrink }) =>
         <BackButton />
         <FavoriteButton
           text={isSaved ? "remove favorite" : "save as favorite"}
-          handleOnClick={handleFavoriteClick}
-        />
+          handleOnClick={handleFavoriteClick} />
       </div>
       </div>
       <div className='drink-details__info-container'>

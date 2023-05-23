@@ -50,7 +50,8 @@ const SearchResultsPage = () => {
           <>
             {!isLoading && (
               <>
-                <h1 className='search-results__header'>{drinks.length} Drinks Found:</h1>
+                <h1 className='search-results__header'>{drinks.length} results for:</h1>
+                <p className='search-results__query'>"{query}"</p>
                 <DrinkGrid drinks={drinks} />
               </>
             )}

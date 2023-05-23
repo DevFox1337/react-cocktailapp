@@ -13,7 +13,7 @@
   padding: 20px;
   border-radius: 15px;
   background: rgba(0, 0, 0, .8);
-  z-index: 99;
+  z-index: z-index(modal);
 
   &__text {
     color: $clr-white;

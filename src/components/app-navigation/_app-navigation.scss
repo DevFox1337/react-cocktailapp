@@ -1,20 +1,20 @@
-@import "../../../scss/mixins", "../../../scss/variables";
+@import "../../scss/mixins", "../../scss/variables";
 
-.mobile-navigation {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  top: $header-height;
+.app-navigation {
+  @include position(absolute, $header-height, auto, auto, auto);
+  @include flex-column;
+  gap: 2px;
   width: 100%;
   background-color: #233243;
   padding: 1px;
   box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.3);
-  z-index: 2;
+
+  @include tablet {
+    width: 50%;
+  }
 
   &__link {
-    display: flex;
-    justify-content: space-between;
+    @include flex-between;
     text-decoration: none;
     color: $clr-white;
     padding: 18px;

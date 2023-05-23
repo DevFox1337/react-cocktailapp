@@ -7,8 +7,7 @@ const BackButton = () => {
     <button
       onClick={handleClick}
       className='drink-details__button'
-      title='Go back to previous screen'
-    >
+      title='Go back to previous screen'>
       go back
     </button>
   )
