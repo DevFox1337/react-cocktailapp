@@ -30,8 +30,7 @@ const SearchBar = ({ toggleSearch }) => {
           placeholder='Search...'
           value={searchQuery}
           onChange={handleInputChange}
-          ref={inputRef}
-        />
+          ref={inputRef} />
         <button className='search-bar__button' type='submit'>
           <span className='material-symbols-outlined icon'>search</span>
         </button>
