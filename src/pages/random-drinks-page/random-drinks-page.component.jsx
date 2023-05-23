@@ -5,6 +5,8 @@ import DrinkGrid from "../../components/drink-grid/drink-grid.component"
 import RefreshButton from "../../components/refresh-button/refresh-button.component"
 import "./_random-drinks-page.scss"
 
+import waiter from "../../assets/images/waiter.png"
+
 const RandomDrinksPage = () => {
   const [drinks, setDrinks] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -52,6 +54,7 @@ const RandomDrinksPage = () => {
         {!isLoading && !isError && (
           <RefreshButton handleRefresh={fetchDrinks} isLoading={isLoading} />
         )}
+        <img src={waiter} alt="Waiter image" className="random-drinks__image" />
       </div>
     </main>
   )

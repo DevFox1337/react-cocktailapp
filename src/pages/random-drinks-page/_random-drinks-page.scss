@@ -12,4 +12,17 @@
     text-transform: capitalize;
     text-align: center;
   }
+
+  &__image {
+    display: none;
+
+    @include tablet {
+      display: block;
+      height: 400px;
+      position: fixed;
+      transform: rotate(20deg);
+      left: -70px;
+      bottom: -230px;
+    }
+  }
 }

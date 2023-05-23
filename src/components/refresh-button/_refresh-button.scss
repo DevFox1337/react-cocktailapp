@@ -2,11 +2,6 @@
 
 .refresh-btn {
   @include primary-button;
-
   width: 80%;
-  max-width: 100%;
-
-  @include tablet-ls {
-    max-width: 350px;
-  }
+  max-width: 350px;
 }
